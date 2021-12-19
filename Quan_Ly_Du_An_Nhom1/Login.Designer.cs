@@ -37,6 +37,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnForgot = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.sqlConnection = new System.Data.SqlClient.SqlConnection();
             this.SuspendLayout();
             // 
             // lblAccount
@@ -72,6 +73,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Location = new System.Drawing.Point(235, 128);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(155, 20);
             this.txtPassword.TabIndex = 1;
             // 
@@ -95,15 +97,16 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnSignUp.TabIndex = 3;
             this.btnSignUp.Text = "SIGN UP";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnForgot
             // 
             this.btnForgot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnForgot.Location = new System.Drawing.Point(146, 234);
             this.btnForgot.Name = "btnForgot";
-            this.btnForgot.Size = new System.Drawing.Size(233, 23);
+            this.btnForgot.Size = new System.Drawing.Size(233, 38);
             this.btnForgot.TabIndex = 4;
-            this.btnForgot.Text = "FORGOR PASSWORD";
+            this.btnForgot.Text = "FORGOT PASSWORD";
             this.btnForgot.UseVisualStyleBackColor = true;
             // 
             // lblWelcome
@@ -114,6 +117,10 @@ namespace Quan_Ly_Du_An_Nhom1
             this.lblWelcome.Size = new System.Drawing.Size(90, 13);
             this.lblWelcome.TabIndex = 7;
             this.lblWelcome.Text = "SIGN IN TO USE";
+            // 
+            // sqlConnection
+            // 
+            this.sqlConnection.FireInfoMessageEventOnUserErrors = false;
             // 
             // Login
             // 
@@ -145,6 +152,7 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnForgot;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Data.SqlClient.SqlConnection sqlConnection;
     }
 }
 
