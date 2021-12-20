@@ -9,7 +9,7 @@ namespace Quan_Ly_Du_An_Nhom1
     public class LibByPhongGio
     {
         public static bool TrangThaiDangNhap = false;
-        public static string ConnectString = @"Data Source=DESKTOP-I06DIRL;Initial Catalog=QLDuAnCNTT;Integrated Security=True";
+        public static string ConnectString = @"Data Source=DESKTOP-HPGNQJL;Initial Catalog=QLDuAnCNTT;Integrated Security=True";
         public static bool CheckStringDacBiet(string str)
         {
             if(str.Length == 0)

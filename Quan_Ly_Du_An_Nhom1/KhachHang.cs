@@ -52,17 +52,34 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void dgvDataView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numrow = e.RowIndex;
-            txtMaKH.Text = dgvDataView.Rows[numrow].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvDataView.Rows[numrow].Cells[1].Value.ToString();
+            try
+            {
+                int numrow = e.RowIndex;
+                txtMaKH.Text = dgvDataView.Rows[numrow].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvDataView.Rows[numrow].Cells[1].Value.ToString();
 
 
-            dateNgaySinh.Value = (DateTime) dgvDataView.Rows[numrow].Cells[2].Value;
+                dateNgaySinh.Value = (DateTime)dgvDataView.Rows[numrow].Cells[2].Value;
 
 
-            txtDiaChi.Text = dgvDataView.Rows[numrow].Cells[3].Value.ToString();
-            txtSDT.Text = dgvDataView.Rows[numrow].Cells[4].Value.ToString();
+                txtDiaChi.Text = dgvDataView.Rows[numrow].Cells[3].Value.ToString();
+                txtSDT.Text = dgvDataView.Rows[numrow].Cells[4].Value.ToString();
+                txtTenDN.Text = dgvDataView.Rows[numrow].Cells[5].Value.ToString();
+                txtMatkhau.Text = dgvDataView.Rows[numrow].Cells[6].Value.ToString();
+
+                cmbQuyen.SelectedIndex = ((int)dgvDataView.Rows[numrow].Cells[7].Value) ;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("NONE VALUE", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
