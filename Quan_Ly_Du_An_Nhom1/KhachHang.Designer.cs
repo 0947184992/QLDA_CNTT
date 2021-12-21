@@ -109,6 +109,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtMaKH
             // 

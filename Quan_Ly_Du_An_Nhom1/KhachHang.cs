@@ -17,31 +17,31 @@ namespace Quan_Ly_Du_An_Nhom1
         SqlCommand sqlCommand;
         string strConnect = LibByPhongGio.ConnectString;
         SqlDataAdapter sqlAdapter = new SqlDataAdapter();
-       
+        string QueryAll = "select * from KHACHHANG;";
         public KhachHang()
         {
             InitializeComponent();
             // Show Data
-            ShowData();
+            ShowData(QueryAll);
         }
         
-        public void ShowData()
+        public void ShowData(string QueryCheck)
         {
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDataView.DataSource = GetDataKhachHang().Tables[0];
+            dgvDataView.DataSource = GetDataKhachHang(QueryCheck).Tables[0];
           //  dgvDataView.Rows[0] = GetDataKhachHang().Tables[0].Rows[0];
           //  dgvDataView.DataMember = "NhanVien";
         }
 
-        DataSet GetDataKhachHang()
+        DataSet GetDataKhachHang(string Query)
         {
             sqlConnect = new SqlConnection(strConnect);
             sqlConnect.Open();
 
-            string Query1 = "select * from KHACHHANG;";
+            //
             DataSet data = new DataSet();
 
-            SqlDataAdapter adapter = new SqlDataAdapter(Query1, sqlConnect);
+            SqlDataAdapter adapter = new SqlDataAdapter(Query, sqlConnect);
 
             adapter.Fill(data);
 
@@ -79,6 +79,16 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string DieuKien = txtSearch.Text;
+
+            string QuerySearch = "select * from KHACHHANG where ;";
+
+            ShowData(QuerySearch);
 
         }
     }
