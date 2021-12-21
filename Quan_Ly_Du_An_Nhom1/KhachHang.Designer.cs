@@ -53,8 +53,14 @@ namespace Quan_Ly_Du_An_Nhom1
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbQuyen = new System.Windows.Forms.ComboBox();
+            this.rdbCheckMaKH = new System.Windows.Forms.RadioButton();
+            this.rdbCheckTenKH = new System.Windows.Forms.RadioButton();
+            this.rdbCheckSĐT = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDataView
@@ -103,7 +109,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(231, 104);
+            this.btnSearch.Location = new System.Drawing.Point(231, 136);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 31);
             this.btnSearch.TabIndex = 12;
@@ -205,7 +211,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(387, 135);
+            this.label3.Location = new System.Drawing.Point(368, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
@@ -215,7 +221,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(387, 57);
+            this.label4.Location = new System.Drawing.Point(368, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 12;
@@ -225,7 +231,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(387, 31);
+            this.label5.Location = new System.Drawing.Point(368, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 13;
@@ -234,7 +240,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtMatkhau
             // 
             this.txtMatkhau.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMatkhau.Location = new System.Drawing.Point(448, 50);
+            this.txtMatkhau.Location = new System.Drawing.Point(429, 54);
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.Size = new System.Drawing.Size(117, 20);
             this.txtMatkhau.TabIndex = 6;
@@ -242,7 +248,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtTenDN
             // 
             this.txtTenDN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenDN.Location = new System.Drawing.Point(448, 24);
+            this.txtTenDN.Location = new System.Drawing.Point(429, 28);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(117, 20);
             this.txtTenDN.TabIndex = 5;
@@ -250,21 +256,22 @@ namespace Quan_Ly_Du_An_Nhom1
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Location = new System.Drawing.Point(619, 28);
+            this.groupBox1.Location = new System.Drawing.Point(552, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 190);
+            this.groupBox1.Size = new System.Drawing.Size(401, 190);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(38, 106);
+            this.txtSearch.Location = new System.Drawing.Point(38, 136);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(165, 48);
@@ -280,10 +287,65 @@ namespace Quan_Ly_Du_An_Nhom1
             "2",
             "3",
             "4"});
-            this.cmbQuyen.Location = new System.Drawing.Point(448, 128);
+            this.cmbQuyen.Location = new System.Drawing.Point(429, 132);
             this.cmbQuyen.Name = "cmbQuyen";
             this.cmbQuyen.Size = new System.Drawing.Size(110, 21);
             this.cmbQuyen.TabIndex = 15;
+            // 
+            // rdbCheckMaKH
+            // 
+            this.rdbCheckMaKH.AutoSize = true;
+            this.rdbCheckMaKH.Location = new System.Drawing.Point(21, 9);
+            this.rdbCheckMaKH.Name = "rdbCheckMaKH";
+            this.rdbCheckMaKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckMaKH.TabIndex = 13;
+            this.rdbCheckMaKH.TabStop = true;
+            this.rdbCheckMaKH.Text = "radioButton1";
+            this.rdbCheckMaKH.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckTenKH
+            // 
+            this.rdbCheckTenKH.AutoSize = true;
+            this.rdbCheckTenKH.Location = new System.Drawing.Point(111, 9);
+            this.rdbCheckTenKH.Name = "rdbCheckTenKH";
+            this.rdbCheckTenKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckTenKH.TabIndex = 13;
+            this.rdbCheckTenKH.TabStop = true;
+            this.rdbCheckTenKH.Text = "radioButton1";
+            this.rdbCheckTenKH.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckSĐT
+            // 
+            this.rdbCheckSĐT.AutoSize = true;
+            this.rdbCheckSĐT.Location = new System.Drawing.Point(208, 9);
+            this.rdbCheckSĐT.Name = "rdbCheckSĐT";
+            this.rdbCheckSĐT.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckSĐT.TabIndex = 13;
+            this.rdbCheckSĐT.TabStop = true;
+            this.rdbCheckSĐT.Text = "radioButton1";
+            this.rdbCheckSĐT.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(293, 7);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.TabIndex = 13;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton1";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton4);
+            this.panel1.Controls.Add(this.rdbCheckSĐT);
+            this.panel1.Controls.Add(this.rdbCheckTenKH);
+            this.panel1.Controls.Add(this.rdbCheckMaKH);
+            this.panel1.Location = new System.Drawing.Point(6, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(389, 47);
+            this.panel1.TabIndex = 14;
             // 
             // KhachHang
             // 
@@ -313,6 +375,8 @@ namespace Quan_Ly_Du_An_Nhom1
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +408,10 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbQuyen;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdbCheckSĐT;
+        private System.Windows.Forms.RadioButton rdbCheckTenKH;
+        private System.Windows.Forms.RadioButton rdbCheckMaKH;
     }
 }
