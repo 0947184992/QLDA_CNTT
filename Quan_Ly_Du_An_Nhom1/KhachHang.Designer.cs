@@ -51,13 +51,13 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtMatkhau = new System.Windows.Forms.TextBox();
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbCheckSĐT = new System.Windows.Forms.RadioButton();
+            this.rdbCheckTenKH = new System.Windows.Forms.RadioButton();
+            this.rdbCheckMaKH = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbQuyen = new System.Windows.Forms.ComboBox();
-            this.rdbCheckMaKH = new System.Windows.Forms.RadioButton();
-            this.rdbCheckTenKH = new System.Windows.Forms.RadioButton();
-            this.rdbCheckSĐT = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbCheckAll = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -269,6 +269,50 @@ namespace Quan_Ly_Du_An_Nhom1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rdbCheckAll);
+            this.panel1.Controls.Add(this.rdbCheckSĐT);
+            this.panel1.Controls.Add(this.rdbCheckTenKH);
+            this.panel1.Controls.Add(this.rdbCheckMaKH);
+            this.panel1.Location = new System.Drawing.Point(6, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(389, 47);
+            this.panel1.TabIndex = 14;
+            // 
+            // rdbCheckSĐT
+            // 
+            this.rdbCheckSĐT.AutoSize = true;
+            this.rdbCheckSĐT.Location = new System.Drawing.Point(208, 9);
+            this.rdbCheckSĐT.Name = "rdbCheckSĐT";
+            this.rdbCheckSĐT.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckSĐT.TabIndex = 13;
+            this.rdbCheckSĐT.TabStop = true;
+            this.rdbCheckSĐT.Text = "radioButton1";
+            this.rdbCheckSĐT.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckTenKH
+            // 
+            this.rdbCheckTenKH.AutoSize = true;
+            this.rdbCheckTenKH.Location = new System.Drawing.Point(111, 9);
+            this.rdbCheckTenKH.Name = "rdbCheckTenKH";
+            this.rdbCheckTenKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckTenKH.TabIndex = 13;
+            this.rdbCheckTenKH.TabStop = true;
+            this.rdbCheckTenKH.Text = "radioButton1";
+            this.rdbCheckTenKH.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckMaKH
+            // 
+            this.rdbCheckMaKH.AutoSize = true;
+            this.rdbCheckMaKH.Location = new System.Drawing.Point(21, 9);
+            this.rdbCheckMaKH.Name = "rdbCheckMaKH";
+            this.rdbCheckMaKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckMaKH.TabIndex = 13;
+            this.rdbCheckMaKH.TabStop = true;
+            this.rdbCheckMaKH.Text = "radioButton1";
+            this.rdbCheckMaKH.UseVisualStyleBackColor = true;
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(38, 136);
@@ -292,60 +336,16 @@ namespace Quan_Ly_Du_An_Nhom1
             this.cmbQuyen.Size = new System.Drawing.Size(110, 21);
             this.cmbQuyen.TabIndex = 15;
             // 
-            // rdbCheckMaKH
+            // rdbCheckAll
             // 
-            this.rdbCheckMaKH.AutoSize = true;
-            this.rdbCheckMaKH.Location = new System.Drawing.Point(21, 9);
-            this.rdbCheckMaKH.Name = "rdbCheckMaKH";
-            this.rdbCheckMaKH.Size = new System.Drawing.Size(85, 17);
-            this.rdbCheckMaKH.TabIndex = 13;
-            this.rdbCheckMaKH.TabStop = true;
-            this.rdbCheckMaKH.Text = "radioButton1";
-            this.rdbCheckMaKH.UseVisualStyleBackColor = true;
-            // 
-            // rdbCheckTenKH
-            // 
-            this.rdbCheckTenKH.AutoSize = true;
-            this.rdbCheckTenKH.Location = new System.Drawing.Point(111, 9);
-            this.rdbCheckTenKH.Name = "rdbCheckTenKH";
-            this.rdbCheckTenKH.Size = new System.Drawing.Size(85, 17);
-            this.rdbCheckTenKH.TabIndex = 13;
-            this.rdbCheckTenKH.TabStop = true;
-            this.rdbCheckTenKH.Text = "radioButton1";
-            this.rdbCheckTenKH.UseVisualStyleBackColor = true;
-            // 
-            // rdbCheckSĐT
-            // 
-            this.rdbCheckSĐT.AutoSize = true;
-            this.rdbCheckSĐT.Location = new System.Drawing.Point(208, 9);
-            this.rdbCheckSĐT.Name = "rdbCheckSĐT";
-            this.rdbCheckSĐT.Size = new System.Drawing.Size(85, 17);
-            this.rdbCheckSĐT.TabIndex = 13;
-            this.rdbCheckSĐT.TabStop = true;
-            this.rdbCheckSĐT.Text = "radioButton1";
-            this.rdbCheckSĐT.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(293, 7);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 17);
-            this.radioButton4.TabIndex = 13;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton1";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radioButton4);
-            this.panel1.Controls.Add(this.rdbCheckSĐT);
-            this.panel1.Controls.Add(this.rdbCheckTenKH);
-            this.panel1.Controls.Add(this.rdbCheckMaKH);
-            this.panel1.Location = new System.Drawing.Point(6, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 47);
-            this.panel1.TabIndex = 14;
+            this.rdbCheckAll.AutoSize = true;
+            this.rdbCheckAll.Location = new System.Drawing.Point(293, 7);
+            this.rdbCheckAll.Name = "rdbCheckAll";
+            this.rdbCheckAll.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckAll.TabIndex = 13;
+            this.rdbCheckAll.TabStop = true;
+            this.rdbCheckAll.Text = "radioButton1";
+            this.rdbCheckAll.UseVisualStyleBackColor = true;
             // 
             // KhachHang
             // 
@@ -409,9 +409,9 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbQuyen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton rdbCheckSĐT;
         private System.Windows.Forms.RadioButton rdbCheckTenKH;
         private System.Windows.Forms.RadioButton rdbCheckMaKH;
+        private System.Windows.Forms.RadioButton rdbCheckAll;
     }
 }
