@@ -2,38 +2,38 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Quan_Ly_Du_An_Nhom1
 {
-    public partial class KhachHang : Form
+    public partial class NhanVien : Form
     {
         SqlConnection sqlConnect;
         SqlCommand sqlCommand;
         string strConnect = LibByPhongGio.ConnectString;
         SqlDataAdapter sqlAdapter = new SqlDataAdapter();
-        string QueryAll = "select * from KHACHHANG;";
-        public KhachHang()
+        string QueryAll = "select * from NHANVIEN;";
+        public NhanVien()
         {
             InitializeComponent();
             // Show Data
             ShowData(QueryAll);
         }
-        
+
         public void ShowData(string QueryCheck)
         {
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDataView.DataSource = GetDataKhachHang(QueryCheck).Tables[0];
-          //  dgvDataView.Rows[0] = GetDataKhachHang().Tables[0].Rows[0];
-          //  dgvDataView.DataMember = "NhanVien";
+            dgvDataView.DataSource = GetDataNhanVien(QueryCheck).Tables[0];
+            //  dgvDataView.Rows[0] = GetDataKhachHang().Tables[0].Rows[0];
+            //  dgvDataView.DataMember = "NhanVien";
         }
 
-        DataSet GetDataKhachHang(string Query)
+        DataSet GetDataNhanVien(string Query)
         {
             sqlConnect = new SqlConnection(strConnect);
             sqlConnect.Open();
@@ -55,7 +55,7 @@ namespace Quan_Ly_Du_An_Nhom1
             try
             {
                 int numrow = e.RowIndex;
-                txtMaKH.Text = dgvDataView.Rows[numrow].Cells[0].Value.ToString();
+                txtMaNV.Text = dgvDataView.Rows[numrow].Cells[0].Value.ToString();
                 txtHoTen.Text = dgvDataView.Rows[numrow].Cells[1].Value.ToString();
 
 
@@ -64,6 +64,10 @@ namespace Quan_Ly_Du_An_Nhom1
 
                 txtDiaChi.Text = dgvDataView.Rows[numrow].Cells[3].Value.ToString();
                 txtSDT.Text = dgvDataView.Rows[numrow].Cells[4].Value.ToString();
+                txtVitri.Text = dgvDataView.Rows[numrow].Cells[5].Value.ToString();
+                txtChucVu.Text = dgvDataView.Rows[numrow].Cells[6].Value.ToString();
+                txtLuong.Text = dgvDataView.Rows[numrow].Cells[7].Value.ToString();
+
                 //txtTenDN.Text = dgvDataView.Rows[numrow].Cells[5].Value.ToString();
                 //txtMatkhau.Text = dgvDataView.Rows[numrow].Cells[6].Value.ToString();
 
@@ -79,14 +83,17 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string MaKH = txtMaKH.Text.Trim();
+            string MaNV = txtMaNV.Text.Trim();
             string HoTen = txtHoTen.Text.Trim();
             DateTime NgaySinh = dateNgaySinh.Value;
             string DiaChi = txtDiaChi.Text.Trim();
             string SDT = txtSDT.Text.Trim();
+            string ViTri = txtVitri.Text.Trim();
+            string ChucVu = txtChucVu.Text.Trim();
+            string Luong = txtLuong.Text.Trim();
 
-            string QueryAdd = "insert into KHACHHANG(MaKH, HoTen, NgaySinh, DiaChi, SDT) " +
-                "values ('"+ MaKH  + "', N'"+ HoTen + "', '"+NgaySinh+"', N'"+DiaChi+"', '"+SDT+"')";
+            string QueryAdd = "insert into NHANVIEN(MaNV, HoTen, NgaySinh, DiaChi, SDT, ViTri, ChucVu, Luong) values " +
+                "('" + MaNV + "', N'" + HoTen + "', '" + NgaySinh + "', N'" + DiaChi + "', '" + SDT + "')";
 
             try
             {
@@ -115,7 +122,7 @@ namespace Quan_Ly_Du_An_Nhom1
             string QuerySearch = "";
             if (rdbCheckAll.Checked)
             {
-                QuerySearch = "select * from KHACHHANG where (MaKH like N'%"+ DieuKien +"%' or HoTen like N'%"+ DieuKien +"%'  or SDT like '%"+ DieuKien +"%'); ";
+                QuerySearch = "select * from KHACHHANG where (MaKH like N'%" + DieuKien + "%' or HoTen like N'%" + DieuKien + "%'  or SDT like '%" + DieuKien + "%'); ";
             }
             else if (rdbCheckMaKH.Checked)
             {
@@ -134,7 +141,7 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string MaKH = txtMaKH.Text.Trim();
+            string MaKH = txtMaNV.Text.Trim();
             string QueryDelete = "";
             if (LibByPhongGio.CheckStringDacBiet(MaKH))
             {
@@ -165,14 +172,14 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string MaKH = txtMaKH.Text.Trim();
+            string MaKH = txtMaNV.Text.Trim();
             string HoTen = txtHoTen.Text.Trim();
             DateTime NgaySinh = dateNgaySinh.Value;
             string DiaChi = txtDiaChi.Text.Trim();
             string SDT = txtSDT.Text.Trim();
 
             string QueryEdit = "UPDATE KHACHHANG " +
-                "SET HoTen = N'"+ HoTen + "', NgaySinh = '" + NgaySinh + "', " +
+                "SET HoTen = N'" + HoTen + "', NgaySinh = '" + NgaySinh + "', " +
                 "DiaChi = N'" + DiaChi + "', SDT = '" + SDT + "' " +
                 "where MaKH = '" + MaKH + "'; ";
 
@@ -193,5 +200,6 @@ namespace Quan_Ly_Du_An_Nhom1
             string Query = "select * from KHACHHANG;";
             ShowData(Query);
         }
+
     }
 }

@@ -21,3 +21,17 @@ C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_A
 C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.Registration.resources
 C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.MainForm.resources
 C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.KhachHang.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\bin\Debug\Quan_Ly_Du_An_Nhom1.exe.config
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\bin\Debug\Quan_Ly_Du_An_Nhom1.exe
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\bin\Debug\Quan_Ly_Du_An_Nhom1.pdb
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.csproj.AssemblyReference.cache
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.KhachHang.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.Login.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.MainForm.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.Properties.Resources.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.Registration.resources
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.csproj.GenerateResource.cache
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.csproj.CoreCompileInputs.cache
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.exe
+D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.pdb
+C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.NhanVien.resources
