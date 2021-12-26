@@ -21,9 +21,10 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             if (LibByPhongGio.TrangThaiDangNhap)
             {
-                menuMainMenu.Enabled = true;
                 btnDangNhap.Enabled = false;
                 btnDangXuat.Enabled = true;
+                menuMainMenu.Enabled = true;
+ 
             }
             else
             {
@@ -43,6 +44,8 @@ namespace Quan_Ly_Du_An_Nhom1
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             LibByPhongGio.TrangThaiDangNhap = false;
+            LibByPhongGio.Account = "";
+            LibByPhongGio.Permission = 0;
             ResetTrangThai();
         }
 
@@ -50,6 +53,12 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             KhachHang khachhangForm = new KhachHang();
             khachhangForm.Show();
+        }
+
+        private void menuNhanVienView_Click(object sender, EventArgs e)
+        {
+            NhanVien nhanVienForm = new NhanVien();
+            nhanVienForm.Show();
         }
     }
 }

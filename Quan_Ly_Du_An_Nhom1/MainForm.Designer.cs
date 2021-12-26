@@ -36,10 +36,10 @@ namespace Quan_Ly_Du_An_Nhom1
             this.menuNhanVienView = new System.Windows.Forms.ToolStripMenuItem();
             this.menuKhachHangAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuKhachHangView = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDangNhap = new System.Windows.Forms.Button();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.menuCongviecAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCongViecView = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDangNhap = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.menuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // menuDuAnView
             // 
             this.menuDuAnView.Name = "menuDuAnView";
-            this.menuDuAnView.Size = new System.Drawing.Size(180, 22);
+            this.menuDuAnView.Size = new System.Drawing.Size(130, 22);
             this.menuDuAnView.Text = "Xem tất cả";
             // 
             // menuNhanVienAll
@@ -83,6 +83,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.menuNhanVienView.Name = "menuNhanVienView";
             this.menuNhanVienView.Size = new System.Drawing.Size(180, 22);
             this.menuNhanVienView.Text = "Xem tất cả";
+            this.menuNhanVienView.Click += new System.EventHandler(this.menuNhanVienView_Click);
             // 
             // menuKhachHangAll
             // 
@@ -95,9 +96,23 @@ namespace Quan_Ly_Du_An_Nhom1
             // menuKhachHangView
             // 
             this.menuKhachHangView.Name = "menuKhachHangView";
-            this.menuKhachHangView.Size = new System.Drawing.Size(180, 22);
+            this.menuKhachHangView.Size = new System.Drawing.Size(130, 22);
             this.menuKhachHangView.Text = "Xem tất cả";
             this.menuKhachHangView.Click += new System.EventHandler(this.menuKhachHangAll_Click);
+            // 
+            // menuCongviecAll
+            // 
+            this.menuCongviecAll.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCongViecView});
+            this.menuCongviecAll.Name = "menuCongviecAll";
+            this.menuCongviecAll.Size = new System.Drawing.Size(72, 20);
+            this.menuCongviecAll.Text = "Công việc";
+            // 
+            // menuCongViecView
+            // 
+            this.menuCongViecView.Name = "menuCongViecView";
+            this.menuCongViecView.Size = new System.Drawing.Size(180, 22);
+            this.menuCongViecView.Text = "Xem tất cả";
             // 
             // btnDangNhap
             // 
@@ -118,20 +133,6 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
-            // 
-            // menuCongviecAll
-            // 
-            this.menuCongviecAll.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuCongViecView});
-            this.menuCongviecAll.Name = "menuCongviecAll";
-            this.menuCongviecAll.Size = new System.Drawing.Size(72, 20);
-            this.menuCongviecAll.Text = "Công việc";
-            // 
-            // menuCongViecView
-            // 
-            this.menuCongViecView.Name = "menuCongViecView";
-            this.menuCongViecView.Size = new System.Drawing.Size(180, 22);
-            this.menuCongViecView.Text = "Xem tất cả";
             // 
             // MainForm
             // 

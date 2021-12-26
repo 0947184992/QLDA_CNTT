@@ -18,19 +18,20 @@ namespace Quan_Ly_Du_An_Nhom1
         string strConnect = LibByPhongGio.ConnectString;
         SqlDataAdapter sqlAdapter = new SqlDataAdapter();
         Registration SignUp;
-        MainForm current; 
+        MainForm current;
         private void LoginCheck(string account, string password)
         {
             sqlConnect = new SqlConnection(strConnect);
             try
             {
                 sqlConnect.Open();
-                string Query1 = "select * from TAIKHOAN where TaiKhoan = '"+ account +"' and MatKhau = '" + password +"';";
+                string Query1 = "select * from TAIKHOAN where TenDN = '" + account +"' and MatKhau = '" + password +"';";
                 sqlCommand = new SqlCommand(Query1, sqlConnect);
                 SqlDataReader DataReader = sqlCommand.ExecuteReader();
                 if (DataReader.Read()) {
                     MessageBox.Show("Đăng nhập thành công!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LibByPhongGio.TrangThaiDangNhap = true;
+                    LibByPhongGio.Account = account;
                     current.ResetTrangThai();
                     this.Close();
                 }
@@ -38,13 +39,46 @@ namespace Quan_Ly_Du_An_Nhom1
                 {
                     MessageBox.Show("Đăng nhập thất bại!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                sqlConnect.Close();
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("Đăng nhập thất bại!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Đăng nhập thất bại! lỗi ex", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
 
+
+            MakeID();
+        }
+        public void MakeID()
+        {
+            sqlConnect = new SqlConnection(strConnect);
+            try
+            {
+                sqlConnect.Open();
+                string Query1 = "select Quyen from TAIKHOAN where TenDN = '" +LibByPhongGio.Account+ "'; ";
+                sqlCommand = new SqlCommand(Query1, sqlConnect);
+                SqlDataReader DataReader = sqlCommand.ExecuteReader();
+                if (DataReader.Read())
+                {
+                    
+                    LibByPhongGio.Permission = DataReader.GetInt32(0); 
+                    MessageBox.Show("Bạn đang đăng nhập tài khoản: " + LibByPhongGio.Account 
+                        + " Với quyền: " + LibByPhongGio.Permission
+                        , "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                sqlConnect.Close();
+            }
+            catch (Exception)
+            {
+            }
+
+        }
         public Login()
         {
             InitializeComponent();

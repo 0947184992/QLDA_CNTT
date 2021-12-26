@@ -45,19 +45,13 @@ namespace Quan_Ly_Du_An_Nhom1
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.dateNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMatkhau = new System.Windows.Forms.TextBox();
-            this.txtTenDN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rdbCheckSĐT = new System.Windows.Forms.RadioButton();
+            this.rdbCheckAll = new System.Windows.Forms.RadioButton();
+            this.rdbCheckSDT = new System.Windows.Forms.RadioButton();
             this.rdbCheckTenKH = new System.Windows.Forms.RadioButton();
             this.rdbCheckMaKH = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cmbQuyen = new System.Windows.Forms.ComboBox();
-            this.rdbCheckAll = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,9 +63,9 @@ namespace Quan_Ly_Du_An_Nhom1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDataView.Location = new System.Drawing.Point(12, 237);
+            this.dgvDataView.Location = new System.Drawing.Point(60, 279);
             this.dgvDataView.Name = "dgvDataView";
-            this.dgvDataView.Size = new System.Drawing.Size(960, 401);
+            this.dgvDataView.Size = new System.Drawing.Size(793, 359);
             this.dgvDataView.TabIndex = 0;
             this.dgvDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataView_CellClick);
             // 
@@ -97,6 +91,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -106,10 +101,11 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(231, 136);
+            this.btnSearch.Location = new System.Drawing.Point(227, 191);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 31);
             this.btnSearch.TabIndex = 12;
@@ -120,7 +116,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtMaKH
             // 
             this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMaKH.Location = new System.Drawing.Point(140, 28);
+            this.txtMaKH.Location = new System.Drawing.Point(168, 28);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(207, 20);
             this.txtMaKH.TabIndex = 0;
@@ -128,7 +124,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtHoTen
             // 
             this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtHoTen.Location = new System.Drawing.Point(140, 54);
+            this.txtHoTen.Location = new System.Drawing.Point(168, 54);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(207, 20);
             this.txtHoTen.TabIndex = 1;
@@ -136,7 +132,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtDiaChi
             // 
             this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDiaChi.Location = new System.Drawing.Point(140, 106);
+            this.txtDiaChi.Location = new System.Drawing.Point(168, 106);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(207, 20);
             this.txtDiaChi.TabIndex = 3;
@@ -144,7 +140,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtSDT
             // 
             this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSDT.Location = new System.Drawing.Point(140, 132);
+            this.txtSDT.Location = new System.Drawing.Point(168, 132);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(207, 20);
             this.txtSDT.TabIndex = 4;
@@ -153,7 +149,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblMaKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMaKH.AutoSize = true;
-            this.lblMaKH.Location = new System.Drawing.Point(26, 35);
+            this.lblMaKH.Location = new System.Drawing.Point(54, 35);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(83, 13);
             this.lblMaKH.TabIndex = 3;
@@ -163,7 +159,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblHoTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(26, 61);
+            this.lblHoTen.Location = new System.Drawing.Point(54, 61);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(106, 13);
             this.lblHoTen.TabIndex = 3;
@@ -173,7 +169,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(26, 113);
+            this.lblDiaChi.Location = new System.Drawing.Point(54, 113);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(40, 13);
             this.lblDiaChi.TabIndex = 3;
@@ -183,7 +179,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(26, 139);
+            this.lblSDT.Location = new System.Drawing.Point(54, 139);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(71, 13);
             this.lblSDT.TabIndex = 3;
@@ -193,7 +189,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(26, 87);
+            this.lblNgaySinh.Location = new System.Drawing.Point(54, 87);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(56, 13);
             this.lblNgaySinh.TabIndex = 3;
@@ -202,56 +198,10 @@ namespace Quan_Ly_Du_An_Nhom1
             // dateNgaySinh
             // 
             this.dateNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateNgaySinh.Location = new System.Drawing.Point(140, 80);
+            this.dateNgaySinh.Location = new System.Drawing.Point(168, 80);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(200, 20);
             this.dateNgaySinh.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(368, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Quyền";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(368, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Mật khẩu";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(368, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Tên ĐN";
-            // 
-            // txtMatkhau
-            // 
-            this.txtMatkhau.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMatkhau.Location = new System.Drawing.Point(429, 54);
-            this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(117, 20);
-            this.txtMatkhau.TabIndex = 6;
-            // 
-            // txtTenDN
-            // 
-            this.txtTenDN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenDN.Location = new System.Drawing.Point(429, 28);
-            this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(117, 20);
-            this.txtTenDN.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -262,9 +212,9 @@ namespace Quan_Ly_Du_An_Nhom1
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Location = new System.Drawing.Point(552, 28);
+            this.groupBox1.Location = new System.Drawing.Point(471, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(401, 190);
+            this.groupBox1.Size = new System.Drawing.Size(401, 245);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -272,34 +222,44 @@ namespace Quan_Ly_Du_An_Nhom1
             // panel1
             // 
             this.panel1.Controls.Add(this.rdbCheckAll);
-            this.panel1.Controls.Add(this.rdbCheckSĐT);
+            this.panel1.Controls.Add(this.rdbCheckSDT);
             this.panel1.Controls.Add(this.rdbCheckTenKH);
             this.panel1.Controls.Add(this.rdbCheckMaKH);
             this.panel1.Location = new System.Drawing.Point(6, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 47);
+            this.panel1.Size = new System.Drawing.Size(389, 99);
             this.panel1.TabIndex = 14;
             // 
-            // rdbCheckSĐT
+            // rdbCheckAll
             // 
-            this.rdbCheckSĐT.AutoSize = true;
-            this.rdbCheckSĐT.Location = new System.Drawing.Point(208, 9);
-            this.rdbCheckSĐT.Name = "rdbCheckSĐT";
-            this.rdbCheckSĐT.Size = new System.Drawing.Size(85, 17);
-            this.rdbCheckSĐT.TabIndex = 13;
-            this.rdbCheckSĐT.TabStop = true;
-            this.rdbCheckSĐT.Text = "radioButton1";
-            this.rdbCheckSĐT.UseVisualStyleBackColor = true;
+            this.rdbCheckAll.AutoSize = true;
+            this.rdbCheckAll.Checked = true;
+            this.rdbCheckAll.Location = new System.Drawing.Point(130, 54);
+            this.rdbCheckAll.Name = "rdbCheckAll";
+            this.rdbCheckAll.Size = new System.Drawing.Size(56, 17);
+            this.rdbCheckAll.TabIndex = 13;
+            this.rdbCheckAll.TabStop = true;
+            this.rdbCheckAll.Text = "Tất cả";
+            this.rdbCheckAll.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckSDT
+            // 
+            this.rdbCheckSDT.AutoSize = true;
+            this.rdbCheckSDT.Location = new System.Drawing.Point(21, 54);
+            this.rdbCheckSDT.Name = "rdbCheckSDT";
+            this.rdbCheckSDT.Size = new System.Drawing.Size(88, 17);
+            this.rdbCheckSDT.TabIndex = 13;
+            this.rdbCheckSDT.Text = "Số điện thoại";
+            this.rdbCheckSDT.UseVisualStyleBackColor = true;
             // 
             // rdbCheckTenKH
             // 
             this.rdbCheckTenKH.AutoSize = true;
-            this.rdbCheckTenKH.Location = new System.Drawing.Point(111, 9);
+            this.rdbCheckTenKH.Location = new System.Drawing.Point(130, 9);
             this.rdbCheckTenKH.Name = "rdbCheckTenKH";
-            this.rdbCheckTenKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckTenKH.Size = new System.Drawing.Size(107, 17);
             this.rdbCheckTenKH.TabIndex = 13;
-            this.rdbCheckTenKH.TabStop = true;
-            this.rdbCheckTenKH.Text = "radioButton1";
+            this.rdbCheckTenKH.Text = "Tên Khách Hàng";
             this.rdbCheckTenKH.UseVisualStyleBackColor = true;
             // 
             // rdbCheckMaKH
@@ -307,58 +267,25 @@ namespace Quan_Ly_Du_An_Nhom1
             this.rdbCheckMaKH.AutoSize = true;
             this.rdbCheckMaKH.Location = new System.Drawing.Point(21, 9);
             this.rdbCheckMaKH.Name = "rdbCheckMaKH";
-            this.rdbCheckMaKH.Size = new System.Drawing.Size(85, 17);
+            this.rdbCheckMaKH.Size = new System.Drawing.Size(101, 17);
             this.rdbCheckMaKH.TabIndex = 13;
-            this.rdbCheckMaKH.TabStop = true;
-            this.rdbCheckMaKH.Text = "radioButton1";
+            this.rdbCheckMaKH.Text = "Mã Khách hàng";
             this.rdbCheckMaKH.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(38, 136);
+            this.txtSearch.Location = new System.Drawing.Point(27, 191);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(165, 48);
             this.txtSearch.TabIndex = 11;
             // 
-            // cmbQuyen
-            // 
-            this.cmbQuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbQuyen.FormattingEnabled = true;
-            this.cmbQuyen.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cmbQuyen.Location = new System.Drawing.Point(429, 132);
-            this.cmbQuyen.Name = "cmbQuyen";
-            this.cmbQuyen.Size = new System.Drawing.Size(110, 21);
-            this.cmbQuyen.TabIndex = 15;
-            // 
-            // rdbCheckAll
-            // 
-            this.rdbCheckAll.AutoSize = true;
-            this.rdbCheckAll.Location = new System.Drawing.Point(293, 7);
-            this.rdbCheckAll.Name = "rdbCheckAll";
-            this.rdbCheckAll.Size = new System.Drawing.Size(85, 17);
-            this.rdbCheckAll.TabIndex = 13;
-            this.rdbCheckAll.TabStop = true;
-            this.rdbCheckAll.Text = "radioButton1";
-            this.rdbCheckAll.UseVisualStyleBackColor = true;
-            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 650);
-            this.Controls.Add(this.cmbQuyen);
+            this.ClientSize = new System.Drawing.Size(945, 650);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtMatkhau);
-            this.Controls.Add(this.txtTenDN);
             this.Controls.Add(this.dateNgaySinh);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.lblNgaySinh);
@@ -400,16 +327,10 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblNgaySinh;
         private System.Windows.Forms.DateTimePicker dateNgaySinh;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMatkhau;
-        private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox cmbQuyen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rdbCheckSĐT;
+        private System.Windows.Forms.RadioButton rdbCheckSDT;
         private System.Windows.Forms.RadioButton rdbCheckTenKH;
         private System.Windows.Forms.RadioButton rdbCheckMaKH;
         private System.Windows.Forms.RadioButton rdbCheckAll;
