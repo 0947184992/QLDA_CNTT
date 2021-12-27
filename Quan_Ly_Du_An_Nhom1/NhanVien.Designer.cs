@@ -31,10 +31,10 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rdbCheckAll = new System.Windows.Forms.RadioButton();
+            this.rdbCheckViTri = new System.Windows.Forms.RadioButton();
             this.rdbCheckSDT = new System.Windows.Forms.RadioButton();
-            this.rdbCheckTenKH = new System.Windows.Forms.RadioButton();
-            this.rdbCheckMaKH = new System.Windows.Forms.RadioButton();
+            this.rdbCheckTenNV = new System.Windows.Forms.RadioButton();
+            this.rdbCheckMaNV = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -53,10 +53,12 @@ namespace Quan_Ly_Du_An_Nhom1
             this.dgvDataView = new System.Windows.Forms.DataGridView();
             this.txtVitri = new System.Windows.Forms.TextBox();
             this.lblVitri = new System.Windows.Forms.Label();
-            this.txtChucVu = new System.Windows.Forms.TextBox();
             this.lblChucVu = new System.Windows.Forms.Label();
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.lblLuong = new System.Windows.Forms.Label();
+            this.rdbCheckChucVu = new System.Windows.Forms.RadioButton();
+            this.rdbCheckAll = new System.Windows.Forms.RadioButton();
+            this.cbbChucVu = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataView)).BeginInit();
@@ -80,26 +82,26 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.rdbCheckAll);
+            this.panel1.Controls.Add(this.rdbCheckViTri);
             this.panel1.Controls.Add(this.rdbCheckSDT);
-            this.panel1.Controls.Add(this.rdbCheckTenKH);
-            this.panel1.Controls.Add(this.rdbCheckMaKH);
+            this.panel1.Controls.Add(this.rdbCheckAll);
+            this.panel1.Controls.Add(this.rdbCheckChucVu);
+            this.panel1.Controls.Add(this.rdbCheckTenNV);
+            this.panel1.Controls.Add(this.rdbCheckMaNV);
             this.panel1.Location = new System.Drawing.Point(6, 76);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(389, 99);
             this.panel1.TabIndex = 14;
             // 
-            // rdbCheckAll
+            // rdbCheckViTri
             // 
-            this.rdbCheckAll.AutoSize = true;
-            this.rdbCheckAll.Checked = true;
-            this.rdbCheckAll.Location = new System.Drawing.Point(130, 54);
-            this.rdbCheckAll.Name = "rdbCheckAll";
-            this.rdbCheckAll.Size = new System.Drawing.Size(56, 17);
-            this.rdbCheckAll.TabIndex = 13;
-            this.rdbCheckAll.TabStop = true;
-            this.rdbCheckAll.Text = "Tất cả";
-            this.rdbCheckAll.UseVisualStyleBackColor = true;
+            this.rdbCheckViTri.AutoSize = true;
+            this.rdbCheckViTri.Location = new System.Drawing.Point(130, 54);
+            this.rdbCheckViTri.Name = "rdbCheckViTri";
+            this.rdbCheckViTri.Size = new System.Drawing.Size(47, 17);
+            this.rdbCheckViTri.TabIndex = 13;
+            this.rdbCheckViTri.Text = "Vị trí";
+            this.rdbCheckViTri.UseVisualStyleBackColor = true;
             // 
             // rdbCheckSDT
             // 
@@ -111,25 +113,25 @@ namespace Quan_Ly_Du_An_Nhom1
             this.rdbCheckSDT.Text = "Số điện thoại";
             this.rdbCheckSDT.UseVisualStyleBackColor = true;
             // 
-            // rdbCheckTenKH
+            // rdbCheckTenNV
             // 
-            this.rdbCheckTenKH.AutoSize = true;
-            this.rdbCheckTenKH.Location = new System.Drawing.Point(130, 9);
-            this.rdbCheckTenKH.Name = "rdbCheckTenKH";
-            this.rdbCheckTenKH.Size = new System.Drawing.Size(107, 17);
-            this.rdbCheckTenKH.TabIndex = 13;
-            this.rdbCheckTenKH.Text = "Tên Khách Hàng";
-            this.rdbCheckTenKH.UseVisualStyleBackColor = true;
+            this.rdbCheckTenNV.AutoSize = true;
+            this.rdbCheckTenNV.Location = new System.Drawing.Point(130, 9);
+            this.rdbCheckTenNV.Name = "rdbCheckTenNV";
+            this.rdbCheckTenNV.Size = new System.Drawing.Size(96, 17);
+            this.rdbCheckTenNV.TabIndex = 13;
+            this.rdbCheckTenNV.Text = "Tên Nhân viên";
+            this.rdbCheckTenNV.UseVisualStyleBackColor = true;
             // 
-            // rdbCheckMaKH
+            // rdbCheckMaNV
             // 
-            this.rdbCheckMaKH.AutoSize = true;
-            this.rdbCheckMaKH.Location = new System.Drawing.Point(21, 9);
-            this.rdbCheckMaKH.Name = "rdbCheckMaKH";
-            this.rdbCheckMaKH.Size = new System.Drawing.Size(101, 17);
-            this.rdbCheckMaKH.TabIndex = 13;
-            this.rdbCheckMaKH.Text = "Mã Khách hàng";
-            this.rdbCheckMaKH.UseVisualStyleBackColor = true;
+            this.rdbCheckMaNV.AutoSize = true;
+            this.rdbCheckMaNV.Location = new System.Drawing.Point(21, 9);
+            this.rdbCheckMaNV.Name = "rdbCheckMaNV";
+            this.rdbCheckMaNV.Size = new System.Drawing.Size(92, 17);
+            this.rdbCheckMaNV.TabIndex = 13;
+            this.rdbCheckMaNV.Text = "Mã Nhân viên";
+            this.rdbCheckMaNV.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -138,6 +140,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(165, 48);
             this.txtSearch.TabIndex = 11;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -299,14 +302,6 @@ namespace Quan_Ly_Du_An_Nhom1
             this.lblVitri.TabIndex = 23;
             this.lblVitri.Text = "Vị trí";
             // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtChucVu.Location = new System.Drawing.Point(196, 209);
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(207, 20);
-            this.txtChucVu.TabIndex = 15;
-            // 
             // lblChucVu
             // 
             this.lblChucVu.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -335,11 +330,49 @@ namespace Quan_Ly_Du_An_Nhom1
             this.lblLuong.TabIndex = 23;
             this.lblLuong.Text = "Lương";
             // 
+            // rdbCheckChucVu
+            // 
+            this.rdbCheckChucVu.AutoSize = true;
+            this.rdbCheckChucVu.Location = new System.Drawing.Point(253, 9);
+            this.rdbCheckChucVu.Name = "rdbCheckChucVu";
+            this.rdbCheckChucVu.Size = new System.Drawing.Size(65, 17);
+            this.rdbCheckChucVu.TabIndex = 13;
+            this.rdbCheckChucVu.Text = "Chức vụ";
+            this.rdbCheckChucVu.UseVisualStyleBackColor = true;
+            // 
+            // rdbCheckAll
+            // 
+            this.rdbCheckAll.AutoSize = true;
+            this.rdbCheckAll.Checked = true;
+            this.rdbCheckAll.Location = new System.Drawing.Point(253, 54);
+            this.rdbCheckAll.Name = "rdbCheckAll";
+            this.rdbCheckAll.Size = new System.Drawing.Size(56, 17);
+            this.rdbCheckAll.TabIndex = 13;
+            this.rdbCheckAll.TabStop = true;
+            this.rdbCheckAll.Text = "Tất cả";
+            this.rdbCheckAll.UseVisualStyleBackColor = true;
+            // 
+            // cbbChucVu
+            // 
+            this.cbbChucVu.FormattingEnabled = true;
+            this.cbbChucVu.Items.AddRange(new object[] {
+            "Quản lý",
+            "Kế toán",
+            "Nhân viên chiến lược",
+            "Nhân viên marketing",
+            "free"});
+            this.cbbChucVu.Location = new System.Drawing.Point(196, 208);
+            this.cbbChucVu.Name = "cbbChucVu";
+            this.cbbChucVu.Size = new System.Drawing.Size(207, 21);
+            this.cbbChucVu.TabIndex = 27;
+            this.cbbChucVu.Text = "Nhân Viên";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 686);
+            this.Controls.Add(this.cbbChucVu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateNgaySinh);
             this.Controls.Add(this.lblSDT);
@@ -352,7 +385,6 @@ namespace Quan_Ly_Du_An_Nhom1
             this.Controls.Add(this.lblMaKH);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtLuong);
-            this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtVitri);
             this.Controls.Add(this.txtHoTen);
@@ -374,10 +406,10 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rdbCheckAll;
+        private System.Windows.Forms.RadioButton rdbCheckViTri;
         private System.Windows.Forms.RadioButton rdbCheckSDT;
-        private System.Windows.Forms.RadioButton rdbCheckTenKH;
-        private System.Windows.Forms.RadioButton rdbCheckMaKH;
+        private System.Windows.Forms.RadioButton rdbCheckTenNV;
+        private System.Windows.Forms.RadioButton rdbCheckMaNV;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
@@ -396,9 +428,11 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.DataGridView dgvDataView;
         private System.Windows.Forms.TextBox txtVitri;
         private System.Windows.Forms.Label lblVitri;
-        private System.Windows.Forms.TextBox txtChucVu;
         private System.Windows.Forms.Label lblChucVu;
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.Label lblLuong;
+        private System.Windows.Forms.RadioButton rdbCheckAll;
+        private System.Windows.Forms.RadioButton rdbCheckChucVu;
+        private System.Windows.Forms.ComboBox cbbChucVu;
     }
 }
