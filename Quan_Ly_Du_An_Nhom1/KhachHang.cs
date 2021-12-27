@@ -193,5 +193,28 @@ namespace Quan_Ly_Du_An_Nhom1
             string Query = "select * from KHACHHANG;";
             ShowData(Query);
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string DieuKien = txtSearch.Text.Trim();
+            string QuerySearch = "";
+            if (rdbCheckAll.Checked)
+            {
+                QuerySearch = "select * from KHACHHANG where (MaKH like N'%" + DieuKien + "%' or HoTen like N'%" + DieuKien + "%'  or SDT like '%" + DieuKien + "%'); ";
+            }
+            else if (rdbCheckMaKH.Checked)
+            {
+                QuerySearch = "select * from KHACHHANG where (MaKH like N'%" + DieuKien + "%'); ";
+            }
+            else if (rdbCheckTenKH.Checked)
+            {
+                QuerySearch = "select * from KHACHHANG where ( HoTen like N'%" + DieuKien + "%'); ";
+            }
+            else if (rdbCheckSDT.Checked)
+            {
+                QuerySearch = "select * from KHACHHANG where (SDT like '%" + DieuKien + "%'); ";
+            }
+            ShowData(QuerySearch);
+        }
     }
 }
