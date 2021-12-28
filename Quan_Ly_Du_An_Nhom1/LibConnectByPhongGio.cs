@@ -10,6 +10,7 @@ namespace Quan_Ly_Du_An_Nhom1
     {
         public static bool TrangThaiDangNhap = false;
         public static int Permission = 0;
+        public static string IdDA = "";
         public static string Account = "";
         public static string ConnectString = @"Data Source=DESKTOP-I06DIRL;Initial Catalog=QLDuAnCNTT;Integrated Security=True";
         public static bool CheckStringDacBiet(string str)

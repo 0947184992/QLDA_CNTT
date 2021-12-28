@@ -91,7 +91,11 @@ namespace Quan_Ly_Du_An_Nhom1
             string ViTri = txtVitri.Text.Trim();
             string ChucVu = cbbChucVu.Text.Trim();
             string Luong = txtLuong.Text.Trim();
-
+            if (MaNV == "" || HoTen == "" || DiaChi == "" || SDT == "" || ViTri == "" || ChucVu == "" || Luong == "")
+            {
+                MessageBox.Show("Không được để trống thông tin", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string QueryAdd = "insert into NHANVIEN(MaNV, HoTen, NgaySinh, DiaChi, SDT, ViTri, ChucVu, Luong) " +
                 "values ('"+ MaNV + "', N'" + HoTen + "', '" + NgaySinh + "', N'" + DiaChi + "', '" + SDT + "', N'" + ViTri + "', N'" + ChucVu + "', " + Luong + ");";
 
@@ -108,8 +112,7 @@ namespace Quan_Ly_Du_An_Nhom1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Lỗi Không tồn tại hoặc sai dữ liệu!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             string Query = "select * from NHANVIEN;";
@@ -163,18 +166,16 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             string MaNV = txtMaNV.Text.Trim();
             string QueryDelete = "";
-            if (LibByPhongGio.CheckStringDacBiet(MaNV))
+            if(MaNV == "")
             {
-                QueryDelete = "delete from NHANVIEN where MaNV = '" + MaNV + "';";
+                MessageBox.Show("Không được để trống mã nhân viên", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
-            {
-                QueryDelete = "Select * from NHANVIEN;";
-            }
+            QueryDelete = "delete from NHANVIEN where MaNV = '" + MaNV + "';";
+            
 
             try
             {
-
                 sqlConnect = new SqlConnection(strConnect);
                 sqlConnect.Open();
                 sqlCommand = new SqlCommand(QueryDelete, sqlConnect);
@@ -184,7 +185,7 @@ namespace Quan_Ly_Du_An_Nhom1
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗi Không tồn tại hoặc sai dữ liệu!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lỗi Không tồn tại, sai dữ liệu Hoặc nhân viên có trong dự án. Hãy thử xóa dự án trước!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             string Query = "select * from NHANVIEN;";
             ShowData(Query);

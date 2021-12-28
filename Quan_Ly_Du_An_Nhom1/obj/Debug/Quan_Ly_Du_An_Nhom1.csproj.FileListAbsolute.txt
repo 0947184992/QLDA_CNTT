@@ -35,3 +35,5 @@ D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.csproj.CoreC
 D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.exe
 D:\QLDA\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.pdb
 C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.NhanVien.resources
+C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.DuAn.resources
+C:\Users\haiph\source\repos\QLDA_CNTT\Quan_Ly_Du_An_Nhom1\obj\Debug\Quan_Ly_Du_An_Nhom1.CongViec.resources

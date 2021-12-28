@@ -87,7 +87,11 @@ namespace Quan_Ly_Du_An_Nhom1
 
             string QueryAdd = "insert into KHACHHANG(MaKH, HoTen, NgaySinh, DiaChi, SDT) " +
                 "values ('"+ MaKH  + "', N'"+ HoTen + "', '"+NgaySinh+"', N'"+DiaChi+"', '"+SDT+"')";
-
+            if (MaKH == "" || HoTen == "" || DiaChi == "" || SDT == "" || DiaChi == "" || SDT == "" )
+            {
+                MessageBox.Show("Không được để trống thông tin", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);
@@ -136,15 +140,9 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             string MaKH = txtMaKH.Text.Trim();
             string QueryDelete = "";
-            if (LibByPhongGio.CheckStringDacBiet(MaKH))
-            {
-                QueryDelete = "delete from KHACHHANG where MaKH = '" + MaKH + "';";
-            }
-            else
-            {
-                QueryDelete = "Select * from KHACHHANG;";
-            }
-
+            
+            QueryDelete = "delete from KHACHHANG where MaKH = '" + MaKH + "';";
+            
             try
             {
 

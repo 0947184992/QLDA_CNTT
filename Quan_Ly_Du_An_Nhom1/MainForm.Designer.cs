@@ -67,8 +67,9 @@ namespace Quan_Ly_Du_An_Nhom1
             // menuDuAnView
             // 
             this.menuDuAnView.Name = "menuDuAnView";
-            this.menuDuAnView.Size = new System.Drawing.Size(130, 22);
+            this.menuDuAnView.Size = new System.Drawing.Size(180, 22);
             this.menuDuAnView.Text = "Xem tất cả";
+            this.menuDuAnView.Click += new System.EventHandler(this.menuDuAnView_Click);
             // 
             // menuNhanVienAll
             // 
@@ -81,7 +82,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // menuNhanVienView
             // 
             this.menuNhanVienView.Name = "menuNhanVienView";
-            this.menuNhanVienView.Size = new System.Drawing.Size(180, 22);
+            this.menuNhanVienView.Size = new System.Drawing.Size(130, 22);
             this.menuNhanVienView.Text = "Xem tất cả";
             this.menuNhanVienView.Click += new System.EventHandler(this.menuNhanVienView_Click);
             // 
@@ -113,6 +114,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.menuCongViecView.Name = "menuCongViecView";
             this.menuCongViecView.Size = new System.Drawing.Size(180, 22);
             this.menuCongViecView.Text = "Xem tất cả";
+            this.menuCongViecView.Click += new System.EventHandler(this.menuCongViecView_Click);
             // 
             // btnDangNhap
             // 

@@ -60,5 +60,18 @@ namespace Quan_Ly_Du_An_Nhom1
             NhanVien nhanVienForm = new NhanVien();
             nhanVienForm.Show();
         }
+
+        private void menuDuAnView_Click(object sender, EventArgs e)
+        {
+            DuAn duAnForm = new DuAn();
+            duAnForm.Show();
+        }
+
+        private void menuCongViecView_Click(object sender, EventArgs e)
+        {
+            LibByPhongGio.IdDA = "";
+            CongViec congViecForm = new CongViec();
+            congViecForm.Show();
+        }
     }
 }
