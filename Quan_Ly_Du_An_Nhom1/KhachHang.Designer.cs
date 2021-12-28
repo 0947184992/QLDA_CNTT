@@ -59,9 +59,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // dgvDataView
             // 
-            this.dgvDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataView.Location = new System.Drawing.Point(60, 279);
             this.dgvDataView.Name = "dgvDataView";
@@ -115,7 +112,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaKH.Location = new System.Drawing.Point(168, 28);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(207, 20);
@@ -123,7 +119,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtHoTen.Location = new System.Drawing.Point(168, 54);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(207, 20);
@@ -131,7 +126,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDiaChi.Location = new System.Drawing.Point(168, 106);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(207, 20);
@@ -139,7 +133,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // txtSDT
             // 
-            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSDT.Location = new System.Drawing.Point(168, 132);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(207, 20);
@@ -147,7 +140,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // lblMaKH
             // 
-            this.lblMaKH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMaKH.AutoSize = true;
             this.lblMaKH.Location = new System.Drawing.Point(54, 35);
             this.lblMaKH.Name = "lblMaKH";
@@ -157,7 +149,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // lblHoTen
             // 
-            this.lblHoTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Location = new System.Drawing.Point(54, 61);
             this.lblHoTen.Name = "lblHoTen";
@@ -167,7 +158,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // lblDiaChi
             // 
-            this.lblDiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Location = new System.Drawing.Point(54, 113);
             this.lblDiaChi.Name = "lblDiaChi";
@@ -177,7 +167,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // lblSDT
             // 
-            this.lblSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSDT.AutoSize = true;
             this.lblSDT.Location = new System.Drawing.Point(54, 139);
             this.lblSDT.Name = "lblSDT";
@@ -187,7 +176,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // lblNgaySinh
             // 
-            this.lblNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNgaySinh.AutoSize = true;
             this.lblNgaySinh.Location = new System.Drawing.Point(54, 87);
             this.lblNgaySinh.Name = "lblNgaySinh";
@@ -197,7 +185,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // dateNgaySinh
             // 
-            this.dateNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateNgaySinh.Location = new System.Drawing.Point(168, 80);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(200, 20);
@@ -205,7 +192,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnSearch);

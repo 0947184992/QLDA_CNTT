@@ -226,7 +226,11 @@ namespace Quan_Ly_Du_An_Nhom1
                 "DiaChi = N'" + DiaChi + "', SDT = '" + SDT + "' " 
                 + ", ViTri = N'" + ViTri + "' " + ", ChucVu = N'" + ChucVu + "' " + ", Luong = '" + Luong + "' " +
                 "where MaNV = '" + MaNV + "'; ";
-
+            if (MaNV == "")
+            {
+                MessageBox.Show("Chưa nhập mã Nhân viên", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);

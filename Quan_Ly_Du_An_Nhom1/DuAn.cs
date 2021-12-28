@@ -274,7 +274,11 @@ namespace Quan_Ly_Du_An_Nhom1
                 "KPDuKien = " + KPDuKien + ", KPBanGiao = " + KPBanGiao + ", KPCuoi = " + KPThucTe + ", " +
                 "TTThanhToan = N'" + TrangThaiThanhToan + "', TongTienDo = " + TongTienDo + " " +
                 "where MaDA = '" + MaDA + "'; ";
-
+            if(MaDA == "")
+            {
+                MessageBox.Show("Chưa nhập mã Dự án", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);
@@ -299,7 +303,11 @@ namespace Quan_Ly_Du_An_Nhom1
             string QueryDelete = "";
 
             QueryDelete = "delete from DUAN where MaDA = '" + MaDA + "';";
-
+            if (MaDA == "")
+            {
+                MessageBox.Show("Chưa nhập mã Dự án", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
 

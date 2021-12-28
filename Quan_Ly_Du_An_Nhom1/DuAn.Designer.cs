@@ -550,8 +550,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // dgvDataView
             // 
-            this.dgvDataView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataView.Location = new System.Drawing.Point(22, 237);
             this.dgvDataView.Name = "dgvDataView";
@@ -567,9 +565,9 @@ namespace Quan_Ly_Du_An_Nhom1
             "Chưa hoàn thành"});
             this.cbbTrangThai.Location = new System.Drawing.Point(363, 47);
             this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(121, 21);
+            this.cbbTrangThai.Size = new System.Drawing.Size(127, 21);
             this.cbbTrangThai.TabIndex = 88;
-            this.cbbTrangThai.Text = "Chưa Hoàn Thành";
+            this.cbbTrangThai.Text = "Chưa hoàn thành";
             // 
             // cbbLoaiDuAn
             // 
@@ -593,8 +591,6 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // dgvKH
             // 
-            this.dgvKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Location = new System.Drawing.Point(899, 237);
             this.dgvKH.Name = "dgvKH";

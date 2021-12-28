@@ -160,7 +160,11 @@ namespace Quan_Ly_Du_An_Nhom1
             string QueryDelete = "";
             
             QueryDelete = "delete from KHACHHANG where MaKH = '" + MaKH + "';";
-            
+            if (MaKH == "")
+            {
+                MessageBox.Show("Chưa nhập mã Khách Hàng", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
 
@@ -191,7 +195,11 @@ namespace Quan_Ly_Du_An_Nhom1
                 "SET HoTen = N'"+ HoTen + "', NgaySinh = '" + NgaySinh + "', " +
                 "DiaChi = N'" + DiaChi + "', SDT = '" + SDT + "' " +
                 "where MaKH = '" + MaKH + "'; ";
-
+            if (MaKH == "")
+            {
+                MessageBox.Show("Chưa nhập mã Khách Hàng", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);

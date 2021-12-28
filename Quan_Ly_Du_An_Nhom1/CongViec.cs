@@ -18,7 +18,7 @@ namespace Quan_Ly_Du_An_Nhom1
         string strConnect = LibByPhongGio.ConnectString;
         SqlDataAdapter sqlAdapter = new SqlDataAdapter();
         string QueryAll = "select * from CONGVIEC where MaDA = '" + LibByPhongGio.IdDA + "';";
-        
+        string QueryMaCV = "select MACV from CONGVIEC order by MACV";
         public CongViec()
         {
             InitializeComponent();
@@ -69,11 +69,17 @@ namespace Quan_Ly_Du_An_Nhom1
         }
 
 
+        void ShowDataMaCV()
+        {
 
+            dgvMaCV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMaCV.DataSource = GetData(QueryMaCV).Tables[0];
+        }
 
 
         public void ShowData(string QueryCheck)
         {
+            ShowDataMaCV();
             txtMaDA.Text = LibByPhongGio.IdDA;
             dgvDataViewCV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDataViewCV.DataSource = GetData(QueryCheck).Tables[0];
@@ -139,7 +145,7 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void dgvQT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+           try
             {
                 int numrow = e.RowIndex;
                 txtMaQT.Text = dgvQT.Rows[numrow].Cells[0].Value.ToString();
