@@ -12,6 +12,11 @@ namespace Quan_Ly_Du_An_Nhom1
 {
     public partial class MainForm : Form
     {
+        public NhanVien nhanVienForm;
+        public DuAn duAnForm;
+        public KhachHang khachhangForm;
+        public Login loginForm;
+        public CongViec congViecForm ;
         public MainForm()
         {
             InitializeComponent();
@@ -19,12 +24,40 @@ namespace Quan_Ly_Du_An_Nhom1
         }
         public void ResetTrangThai()
         {
-            if (LibByPhongGio.TrangThaiDangNhap)
+            if (LibByPhongGio.TrangThaiDangNhap && LibByPhongGio.Permission == 1) // admin
             {
                 btnDangNhap.Enabled = false;
                 btnDangXuat.Enabled = true;
                 menuMainMenu.Enabled = true;
- 
+
+                
+                menuCongviecAll.Enabled = true;
+                menuNhanVienAll.Enabled = true;
+                menuKhachHangAll.Enabled = true;
+                menuDuAnAll.Enabled = true;
+
+            }
+            else if(LibByPhongGio.TrangThaiDangNhap && LibByPhongGio.Permission == 2)// khach hang
+            {
+                btnDangNhap.Enabled = false;
+                btnDangXuat.Enabled = true;
+                menuMainMenu.Enabled = true;
+
+                menuCongviecAll.Enabled = true;
+                menuNhanVienAll.Enabled = false;
+                menuKhachHangAll.Enabled = false;
+                menuDuAnAll.Enabled = true;
+            }
+            else if (LibByPhongGio.TrangThaiDangNhap && LibByPhongGio.Permission == 0) // nhan vien
+            {
+                btnDangNhap.Enabled = false;
+                btnDangXuat.Enabled = true;
+                menuMainMenu.Enabled = true;
+
+                menuCongviecAll.Enabled = true;
+                menuNhanVienAll.Enabled = false;
+                menuKhachHangAll.Enabled = true;
+                menuDuAnAll.Enabled = true;
             }
             else
             {
@@ -36,7 +69,7 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            loginForm = new Login();
             loginForm.Show();
             loginForm.SaveForm(this);
         }
@@ -51,14 +84,71 @@ namespace Quan_Ly_Du_An_Nhom1
 
         private void menuKhachHangAll_Click(object sender, EventArgs e)
         {
-            KhachHang khachhangForm = new KhachHang();
-            khachhangForm.Show();
+            if (khachhangForm == null)
+            {
+                khachhangForm = new KhachHang();
+                khachhangForm.Show();
+            }
+            else
+            {
+                khachhangForm.Close();
+                khachhangForm = new KhachHang();
+                khachhangForm.Show();
+            }/*
+            khachhangForm = new KhachHang();
+            khachhangForm.Show();*/
         }
 
         private void menuNhanVienView_Click(object sender, EventArgs e)
         {
-            NhanVien nhanVienForm = new NhanVien();
-            nhanVienForm.Show();
+            if (nhanVienForm == null)
+            {
+                nhanVienForm = new NhanVien();
+                nhanVienForm.Show();
+            }
+            else
+            {
+                nhanVienForm.Close();
+                nhanVienForm = new NhanVien();
+                nhanVienForm.Show();
+            }/*
+            nhanVienForm = new NhanVien();
+            nhanVienForm.Show();*/
+        }
+
+        private void menuDuAnView_Click(object sender, EventArgs e)
+        {
+            if (duAnForm == null)
+            {
+                duAnForm = new DuAn();
+                duAnForm.Show();
+            }
+            else
+            {
+                duAnForm.Close();
+                duAnForm = new DuAn();
+                duAnForm.Show();
+            }/*
+            duAnForm = new DuAn();
+            duAnForm.Show();*/
+        }
+
+        private void menuCongViecView_Click(object sender, EventArgs e)
+        {
+            LibByPhongGio.IdDA = "";
+            if (congViecForm == null)
+            {
+                congViecForm = new CongViec();
+                congViecForm.Show();
+            }
+            else
+            {
+                congViecForm.Close();
+                congViecForm = new CongViec();
+                congViecForm.Show();
+            }/*
+            congViecForm = new CongViec();
+            congViecForm.Show();*/
         }
     }
 }

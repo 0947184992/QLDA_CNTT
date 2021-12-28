@@ -32,6 +32,7 @@ namespace Quan_Ly_Du_An_Nhom1
                     MessageBox.Show("Đăng nhập thành công!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LibByPhongGio.TrangThaiDangNhap = true;
                     LibByPhongGio.Account = account;
+                    MakeID();
                     current.ResetTrangThai();
                     this.Close();
                 }
@@ -46,8 +47,6 @@ namespace Quan_Ly_Du_An_Nhom1
                 MessageBox.Show("Đăng nhập thất bại! lỗi ex", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
-            MakeID();
         }
         public void MakeID()
         {

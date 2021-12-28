@@ -29,15 +29,20 @@ namespace Quan_Ly_Du_An_Nhom1
             string Tk = txtAccount.Text;
             string Mk = txtPassword.Text;
             string reMk = txtRetype.Text;
+            
             if (!LibByPhongGio.CheckStringDacBiet(Tk) || !LibByPhongGio.CheckStringDacBiet(Mk) || !LibByPhongGio.CheckStringDacBiet(reMk))
             {
-                MessageBox.Show("KIỂM TRA DỮ LIỆU NHẬP VÀO!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("EROR!KIỂM TRA DỮ LIỆU NHẬP VÀO!", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (Mk != reMk)
+                if(Mk.Length < 5)
                 {
-                    MessageBox.Show("Mat khau khong trung khop", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mật khẩu không được nhỏ hơn 5 kí tự", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (Mk != reMk)
+                {
+                    MessageBox.Show("Mật khẩu không khớp", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -49,9 +54,18 @@ namespace Quan_Ly_Du_An_Nhom1
         void SignUpCheck(string Tk, string Mk)
         {
             sqlConnect = new SqlConnection(strConnect);
+            int Quyen = 0;
+            if (rdbNhanVien.Checked)
+            {
+                Quyen = 0;
+            }
+            else
+            {
+                Quyen = 2;
+            }
 
             sqlConnect.Open();
-            string Query1 = "insert into TAIKHOAN values ('" + Tk + "' , '" + Mk + "', 0); ";
+            string Query1 = "insert into TAIKHOAN values ('" + Tk + "' , '" + Mk + "', "+ Quyen + "); ";
             sqlCommand = new SqlCommand(Query1, sqlConnect);
             try
             {
@@ -68,6 +82,20 @@ namespace Quan_Ly_Du_An_Nhom1
             }
 
 
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            string CheckML = txtPassword.Text.Trim();
+
+            if(CheckML.Length < 5)
+            {
+                lblMK.Text = "Mật khẩu phải > 5 kí tự";
+            }
+            else
+            {
+                lblMK.Text = "OK";
+            }
         }
     }
 }

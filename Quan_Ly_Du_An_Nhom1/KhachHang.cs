@@ -23,8 +23,26 @@ namespace Quan_Ly_Du_An_Nhom1
             InitializeComponent();
             // Show Data
             ShowData(QueryAll);
+            ResetButton();
         }
-        
+        public void ResetButton()
+        {
+            switch (LibByPhongGio.Permission)
+            {
+                case 0: // Nhan Vien
+                case 1: // admin
+                    btnAdd.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnEdit.Enabled = true;
+                    break;
+                case 2: // user
+                default:
+                    btnAdd.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnEdit.Enabled = false;
+                    break;
+            }
+        }
         public void ShowData(string QueryCheck)
         {
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -87,7 +105,11 @@ namespace Quan_Ly_Du_An_Nhom1
 
             string QueryAdd = "insert into KHACHHANG(MaKH, HoTen, NgaySinh, DiaChi, SDT) " +
                 "values ('"+ MaKH  + "', N'"+ HoTen + "', '"+NgaySinh+"', N'"+DiaChi+"', '"+SDT+"')";
-
+            if (MaKH == "" || HoTen == "" || DiaChi == "" || SDT == "" || DiaChi == "" || SDT == "" )
+            {
+                MessageBox.Show("Không được để trống thông tin", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);
@@ -136,15 +158,13 @@ namespace Quan_Ly_Du_An_Nhom1
         {
             string MaKH = txtMaKH.Text.Trim();
             string QueryDelete = "";
-            if (LibByPhongGio.CheckStringDacBiet(MaKH))
+            
+            QueryDelete = "delete from KHACHHANG where MaKH = '" + MaKH + "';";
+            if (MaKH == "")
             {
-                QueryDelete = "delete from KHACHHANG where MaKH = '" + MaKH + "';";
+                MessageBox.Show("Chưa nhập mã Khách Hàng", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
-            {
-                QueryDelete = "Select * from KHACHHANG;";
-            }
-
             try
             {
 
@@ -175,7 +195,11 @@ namespace Quan_Ly_Du_An_Nhom1
                 "SET HoTen = N'"+ HoTen + "', NgaySinh = '" + NgaySinh + "', " +
                 "DiaChi = N'" + DiaChi + "', SDT = '" + SDT + "' " +
                 "where MaKH = '" + MaKH + "'; ";
-
+            if (MaKH == "")
+            {
+                MessageBox.Show("Chưa nhập mã Khách Hàng", "TA ĐA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 sqlConnect = new SqlConnection(strConnect);
