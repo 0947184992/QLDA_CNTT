@@ -35,7 +35,6 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
-            this.btnForgot = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.sqlConnection = new System.Data.SqlClient.SqlConnection();
             this.SuspendLayout();
@@ -44,7 +43,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAccount.AutoSize = true;
-            this.lblAccount.Location = new System.Drawing.Point(129, 83);
+            this.lblAccount.Location = new System.Drawing.Point(126, 79);
             this.lblAccount.Name = "lblAccount";
             this.lblAccount.Size = new System.Drawing.Size(59, 13);
             this.lblAccount.TabIndex = 5;
@@ -54,7 +53,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(129, 135);
+            this.lblPassword.Location = new System.Drawing.Point(126, 131);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(70, 13);
             this.lblPassword.TabIndex = 6;
@@ -63,7 +62,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtAccount
             // 
             this.txtAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAccount.Location = new System.Drawing.Point(235, 80);
+            this.txtAccount.Location = new System.Drawing.Point(232, 76);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(155, 20);
             this.txtAccount.TabIndex = 0;
@@ -71,7 +70,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(235, 128);
+            this.txtPassword.Location = new System.Drawing.Point(232, 124);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(155, 20);
@@ -80,7 +79,7 @@ namespace Quan_Ly_Du_An_Nhom1
             // btnSignIn
             // 
             this.btnSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSignIn.Location = new System.Drawing.Point(146, 180);
+            this.btnSignIn.Location = new System.Drawing.Point(143, 176);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(107, 32);
             this.btnSignIn.TabIndex = 2;
@@ -91,23 +90,13 @@ namespace Quan_Ly_Du_An_Nhom1
             // btnSignUp
             // 
             this.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSignUp.Location = new System.Drawing.Point(272, 180);
+            this.btnSignUp.Location = new System.Drawing.Point(269, 176);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(107, 32);
             this.btnSignUp.TabIndex = 3;
             this.btnSignUp.Text = "SIGN UP";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
-            // btnForgot
-            // 
-            this.btnForgot.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnForgot.Location = new System.Drawing.Point(146, 234);
-            this.btnForgot.Name = "btnForgot";
-            this.btnForgot.Size = new System.Drawing.Size(233, 38);
-            this.btnForgot.TabIndex = 4;
-            this.btnForgot.Text = "FORGOT PASSWORD";
-            this.btnForgot.UseVisualStyleBackColor = true;
             // 
             // lblWelcome
             // 
@@ -126,9 +115,8 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 284);
+            this.ClientSize = new System.Drawing.Size(517, 241);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.btnForgot);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtPassword);
@@ -150,7 +138,6 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnSignUp;
-        private System.Windows.Forms.Button btnForgot;
         private System.Windows.Forms.Label lblWelcome;
         private System.Data.SqlClient.SqlConnection sqlConnection;
     }

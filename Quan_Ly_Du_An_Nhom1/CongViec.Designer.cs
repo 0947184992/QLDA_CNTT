@@ -30,6 +30,7 @@ namespace Quan_Ly_Du_An_Nhom1
         private void InitializeComponent()
         {
             this.grbQT = new System.Windows.Forms.GroupBox();
+            this.dgvQT = new System.Windows.Forms.DataGridView();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.grbDataCV = new System.Windows.Forms.GroupBox();
+            this.dgvDataViewCV = new System.Windows.Forms.DataGridView();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,16 +84,16 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtMaCV = new System.Windows.Forms.TextBox();
             this.txtTenCV = new System.Windows.Forms.TextBox();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDeleteCV = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grbThoiGian = new System.Windows.Forms.GroupBox();
+            this.dateThucTe = new System.Windows.Forms.DateTimePicker();
+            this.dateDuKien = new System.Windows.Forms.DateTimePicker();
+            this.dateBanGiao = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -104,22 +106,22 @@ namespace Quan_Ly_Du_An_Nhom1
             this.lblTGBanGiao = new System.Windows.Forms.Label();
             this.lblThoiGianThucTe = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgvDataViewCV = new System.Windows.Forms.DataGridView();
-            this.dgvQT = new System.Windows.Forms.DataGridView();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.dateBanGiao = new System.Windows.Forms.DateTimePicker();
-            this.dateDuKien = new System.Windows.Forms.DateTimePicker();
-            this.dateThucTe = new System.Windows.Forms.DateTimePicker();
+            this.lblMaDA = new System.Windows.Forms.Label();
+            this.txtMaDA = new System.Windows.Forms.TextBox();
+            this.lblNV = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.btnAddQT = new System.Windows.Forms.Button();
+            this.btnEditQT = new System.Windows.Forms.Button();
+            this.btnXoaQT = new System.Windows.Forms.Button();
             this.grbQT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQT)).BeginInit();
             this.grbDataCV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDataViewCV)).BeginInit();
             this.grbQuaTrinh.SuspendLayout();
             this.grbCV.SuspendLayout();
             this.grbChucNang.SuspendLayout();
             this.grbThoiGian.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDataViewCV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQT)).BeginInit();
             this.SuspendLayout();
             // 
             // grbQT
@@ -133,7 +135,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbQT.Controls.Add(this.label52);
             this.grbQT.Controls.Add(this.label53);
             this.grbQT.Controls.Add(this.label54);
-            this.grbQT.Location = new System.Drawing.Point(535, 231);
+            this.grbQT.Location = new System.Drawing.Point(533, 253);
             this.grbQT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbQT.Name = "grbQT";
             this.grbQT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -141,6 +143,17 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbQT.TabIndex = 64;
             this.grbQT.TabStop = false;
             this.grbQT.Text = "Danh sách Quá trình của Công việc";
+            // 
+            // dgvQT
+            // 
+            this.dgvQT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvQT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQT.Location = new System.Drawing.Point(8, 15);
+            this.dgvQT.Name = "dgvQT";
+            this.dgvQT.Size = new System.Drawing.Size(340, 363);
+            this.dgvQT.TabIndex = 89;
+            this.dgvQT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQT_CellContentClick);
             // 
             // label47
             // 
@@ -219,7 +232,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbDataCV.Controls.Add(this.label44);
             this.grbDataCV.Controls.Add(this.label45);
             this.grbDataCV.Controls.Add(this.label46);
-            this.grbDataCV.Location = new System.Drawing.Point(21, 224);
+            this.grbDataCV.Location = new System.Drawing.Point(21, 246);
             this.grbDataCV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbDataCV.Name = "grbDataCV";
             this.grbDataCV.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,6 +240,17 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbDataCV.TabIndex = 63;
             this.grbDataCV.TabStop = false;
             this.grbDataCV.Text = "Danh sách Công việc của Dự án";
+            // 
+            // dgvDataViewCV
+            // 
+            this.dgvDataViewCV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvDataViewCV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDataViewCV.Location = new System.Drawing.Point(11, 22);
+            this.dgvDataViewCV.Name = "dgvDataViewCV";
+            this.dgvDataViewCV.Size = new System.Drawing.Size(482, 363);
+            this.dgvDataViewCV.TabIndex = 89;
+            this.dgvDataViewCV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataViewCV_CellClick);
             // 
             // label56
             // 
@@ -464,6 +488,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtMaCVQT.Location = new System.Drawing.Point(51, 44);
             this.txtMaCVQT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaCVQT.Name = "txtMaCVQT";
+            this.txtMaCVQT.ReadOnly = true;
             this.txtMaCVQT.Size = new System.Drawing.Size(127, 20);
             this.txtMaCVQT.TabIndex = 74;
             // 
@@ -475,11 +500,15 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbCV.Controls.Add(this.label60);
             this.grbCV.Controls.Add(this.label61);
             this.grbCV.Controls.Add(this.label62);
+            this.grbCV.Controls.Add(this.txtMaNV);
+            this.grbCV.Controls.Add(this.txtMaDA);
             this.grbCV.Controls.Add(this.txtKinhPhiCV);
             this.grbCV.Controls.Add(this.label63);
             this.grbCV.Controls.Add(this.lblTenCV);
             this.grbCV.Controls.Add(this.label65);
             this.grbCV.Controls.Add(this.lblMaCV);
+            this.grbCV.Controls.Add(this.lblNV);
+            this.grbCV.Controls.Add(this.lblMaDA);
             this.grbCV.Controls.Add(this.lblKinhPhiCV);
             this.grbCV.Controls.Add(this.txtMaCV);
             this.grbCV.Controls.Add(this.txtTenCV);
@@ -487,7 +516,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbCV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbCV.Name = "grbCV";
             this.grbCV.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbCV.Size = new System.Drawing.Size(219, 105);
+            this.grbCV.Size = new System.Drawing.Size(219, 181);
             this.grbCV.TabIndex = 86;
             this.grbCV.TabStop = false;
             this.grbCV.Text = "Công việc";
@@ -609,56 +638,23 @@ namespace Quan_Ly_Du_An_Nhom1
             // 
             // grbChucNang
             // 
-            this.grbChucNang.Controls.Add(this.radioButton2);
-            this.grbChucNang.Controls.Add(this.label2);
-            this.grbChucNang.Controls.Add(this.radioButton1);
             this.grbChucNang.Controls.Add(this.label22);
-            this.grbChucNang.Controls.Add(this.textBox8);
+            this.grbChucNang.Controls.Add(this.txtSearch);
             this.grbChucNang.Controls.Add(this.btnSearch);
-            this.grbChucNang.Controls.Add(this.btnDelete);
+            this.grbChucNang.Controls.Add(this.btnXoaQT);
+            this.grbChucNang.Controls.Add(this.btnDeleteCV);
+            this.grbChucNang.Controls.Add(this.btnEditQT);
             this.grbChucNang.Controls.Add(this.btnEdit);
+            this.grbChucNang.Controls.Add(this.btnAddQT);
             this.grbChucNang.Controls.Add(this.btnAdd);
-            this.grbChucNang.Location = new System.Drawing.Point(21, 147);
+            this.grbChucNang.Location = new System.Drawing.Point(246, 153);
             this.grbChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbChucNang.Name = "grbChucNang";
             this.grbChucNang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbChucNang.Size = new System.Drawing.Size(876, 61);
+            this.grbChucNang.Size = new System.Drawing.Size(657, 89);
             this.grbChucNang.TabIndex = 88;
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức năng";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(741, 37);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 17);
-            this.radioButton2.TabIndex = 89;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Quá trình";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(655, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 13);
-            this.label2.TabIndex = 85;
-            this.label2.Text = "Điều kiện thực hiện chức năng:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(655, 37);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 88;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Công việc";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
@@ -668,53 +664,58 @@ namespace Quan_Ly_Du_An_Nhom1
             this.label22.Size = new System.Drawing.Size(0, 13);
             this.label22.TabIndex = 87;
             // 
-            // textBox8
+            // txtSearch
             // 
-            this.textBox8.Location = new System.Drawing.Point(416, 17);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(168, 20);
-            this.textBox8.TabIndex = 30;
+            this.txtSearch.Location = new System.Drawing.Point(397, 28);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(168, 20);
+            this.txtSearch.TabIndex = 30;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(311, 17);
+            this.btnSearch.Location = new System.Drawing.Point(295, 28);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(70, 26);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnDelete
+            // btnDeleteCV
             // 
-            this.btnDelete.Location = new System.Drawing.Point(206, 17);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(70, 26);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDeleteCV.Location = new System.Drawing.Point(198, 26);
+            this.btnDeleteCV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteCV.Name = "btnDeleteCV";
+            this.btnDeleteCV.Size = new System.Drawing.Size(70, 26);
+            this.btnDeleteCV.TabIndex = 2;
+            this.btnDeleteCV.Text = "Xóa CV";
+            this.btnDeleteCV.UseVisualStyleBackColor = true;
+            this.btnDeleteCV.Click += new System.EventHandler(this.btnDeleteCV_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(104, 17);
+            this.btnEdit.Location = new System.Drawing.Point(97, 26);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 26);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Sửa CV";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(8, 17);
+            this.btnAdd.Location = new System.Drawing.Point(8, 26);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 26);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Text = "Thêm CV";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grbThoiGian
             // 
@@ -740,6 +741,27 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbThoiGian.TabIndex = 88;
             this.grbThoiGian.TabStop = false;
             this.grbThoiGian.Text = "Thời gian";
+            // 
+            // dateThucTe
+            // 
+            this.dateThucTe.Location = new System.Drawing.Point(63, 76);
+            this.dateThucTe.Name = "dateThucTe";
+            this.dateThucTe.Size = new System.Drawing.Size(200, 20);
+            this.dateThucTe.TabIndex = 82;
+            // 
+            // dateDuKien
+            // 
+            this.dateDuKien.Location = new System.Drawing.Point(63, 50);
+            this.dateDuKien.Name = "dateDuKien";
+            this.dateDuKien.Size = new System.Drawing.Size(200, 20);
+            this.dateDuKien.TabIndex = 82;
+            // 
+            // dateBanGiao
+            // 
+            this.dateBanGiao.Location = new System.Drawing.Point(63, 23);
+            this.dateBanGiao.Name = "dateBanGiao";
+            this.dateBanGiao.Size = new System.Drawing.Size(200, 20);
+            this.dateBanGiao.TabIndex = 82;
             // 
             // label23
             // 
@@ -842,79 +864,83 @@ namespace Quan_Ly_Du_An_Nhom1
             this.label6.TabIndex = 83;
             this.label6.Text = "Quản lý thông tin công việc và quá trình";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(825, 8);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 19);
-            this.button6.TabIndex = 90;
-            this.button6.Text = "Đăng xuất";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(735, 8);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 19);
-            this.button2.TabIndex = 89;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dgvDataViewCV
-            // 
-            this.dgvDataViewCV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvDataViewCV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDataViewCV.Location = new System.Drawing.Point(11, 22);
-            this.dgvDataViewCV.Name = "dgvDataViewCV";
-            this.dgvDataViewCV.Size = new System.Drawing.Size(482, 363);
-            this.dgvDataViewCV.TabIndex = 89;
-            this.dgvDataViewCV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataViewCV_CellClick);
-            // 
-            // dgvQT
-            // 
-            this.dgvQT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvQT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQT.Location = new System.Drawing.Point(8, 15);
-            this.dgvQT.Name = "dgvQT";
-            this.dgvQT.Size = new System.Drawing.Size(340, 363);
-            this.dgvQT.TabIndex = 89;
-            // 
             // sqlConnection1
             // 
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
-            // dateBanGiao
+            // lblMaDA
             // 
-            this.dateBanGiao.Location = new System.Drawing.Point(63, 23);
-            this.dateBanGiao.Name = "dateBanGiao";
-            this.dateBanGiao.Size = new System.Drawing.Size(200, 20);
-            this.dateBanGiao.TabIndex = 82;
+            this.lblMaDA.AutoSize = true;
+            this.lblMaDA.Location = new System.Drawing.Point(4, 109);
+            this.lblMaDA.Name = "lblMaDA";
+            this.lblMaDA.Size = new System.Drawing.Size(43, 13);
+            this.lblMaDA.TabIndex = 70;
+            this.lblMaDA.Text = "Mã DA:";
             // 
-            // dateDuKien
+            // txtMaDA
             // 
-            this.dateDuKien.Location = new System.Drawing.Point(63, 50);
-            this.dateDuKien.Name = "dateDuKien";
-            this.dateDuKien.Size = new System.Drawing.Size(200, 20);
-            this.dateDuKien.TabIndex = 82;
+            this.txtMaDA.Location = new System.Drawing.Point(70, 105);
+            this.txtMaDA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaDA.Name = "txtMaDA";
+            this.txtMaDA.ReadOnly = true;
+            this.txtMaDA.Size = new System.Drawing.Size(127, 20);
+            this.txtMaDA.TabIndex = 82;
             // 
-            // dateThucTe
+            // lblNV
             // 
-            this.dateThucTe.Location = new System.Drawing.Point(63, 76);
-            this.dateThucTe.Name = "dateThucTe";
-            this.dateThucTe.Size = new System.Drawing.Size(200, 20);
-            this.dateThucTe.TabIndex = 82;
+            this.lblNV.AutoSize = true;
+            this.lblNV.Location = new System.Drawing.Point(5, 142);
+            this.lblNV.Name = "lblNV";
+            this.lblNV.Size = new System.Drawing.Size(43, 13);
+            this.lblNV.TabIndex = 70;
+            this.lblNV.Text = "Mã NV:";
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(71, 138);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(127, 20);
+            this.txtMaNV.TabIndex = 82;
+            // 
+            // btnAddQT
+            // 
+            this.btnAddQT.Location = new System.Drawing.Point(7, 56);
+            this.btnAddQT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddQT.Name = "btnAddQT";
+            this.btnAddQT.Size = new System.Drawing.Size(70, 26);
+            this.btnAddQT.TabIndex = 0;
+            this.btnAddQT.Text = "Thêm QT";
+            this.btnAddQT.UseVisualStyleBackColor = true;
+            this.btnAddQT.Click += new System.EventHandler(this.btnAddQT_Click);
+            // 
+            // btnEditQT
+            // 
+            this.btnEditQT.Location = new System.Drawing.Point(97, 56);
+            this.btnEditQT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditQT.Name = "btnEditQT";
+            this.btnEditQT.Size = new System.Drawing.Size(70, 26);
+            this.btnEditQT.TabIndex = 1;
+            this.btnEditQT.Text = "Sửa QT";
+            this.btnEditQT.UseVisualStyleBackColor = true;
+            this.btnEditQT.Click += new System.EventHandler(this.btnEditQT_Click);
+            // 
+            // btnXoaQT
+            // 
+            this.btnXoaQT.Location = new System.Drawing.Point(198, 56);
+            this.btnXoaQT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaQT.Name = "btnXoaQT";
+            this.btnXoaQT.Size = new System.Drawing.Size(70, 26);
+            this.btnXoaQT.TabIndex = 2;
+            this.btnXoaQT.Text = "Xóa QT";
+            this.btnXoaQT.UseVisualStyleBackColor = true;
+            this.btnXoaQT.Click += new System.EventHandler(this.btnXoaQT_Click);
             // 
             // CongViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 634);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grbThoiGian);
             this.Controls.Add(this.grbChucNang);
@@ -927,8 +953,10 @@ namespace Quan_Ly_Du_An_Nhom1
             this.Text = "QL_CV";
             this.grbQT.ResumeLayout(false);
             this.grbQT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQT)).EndInit();
             this.grbDataCV.ResumeLayout(false);
             this.grbDataCV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDataViewCV)).EndInit();
             this.grbQuaTrinh.ResumeLayout(false);
             this.grbQuaTrinh.PerformLayout();
             this.grbCV.ResumeLayout(false);
@@ -937,8 +965,6 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbChucNang.PerformLayout();
             this.grbThoiGian.ResumeLayout(false);
             this.grbThoiGian.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDataViewCV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -998,9 +1024,9 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.TextBox txtTenCV;
         private System.Windows.Forms.GroupBox grbChucNang;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDeleteCV;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grbThoiGian;
@@ -1018,16 +1044,18 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTienDo;
         private System.Windows.Forms.Label lblTienDo;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dgvQT;
         private System.Windows.Forms.DataGridView dgvDataViewCV;
         private System.Data.SqlClient.SqlConnection sqlConnection1;
         private System.Windows.Forms.DateTimePicker dateThucTe;
         private System.Windows.Forms.DateTimePicker dateDuKien;
         private System.Windows.Forms.DateTimePicker dateBanGiao;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.TextBox txtMaDA;
+        private System.Windows.Forms.Label lblNV;
+        private System.Windows.Forms.Label lblMaDA;
+        private System.Windows.Forms.Button btnAddQT;
+        private System.Windows.Forms.Button btnEditQT;
+        private System.Windows.Forms.Button btnXoaQT;
     }
 }

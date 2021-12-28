@@ -23,8 +23,27 @@ namespace Quan_Ly_Du_An_Nhom1
             InitializeComponent();
             // Show Data
             ShowData(QueryAll);
+            ResetButton();
         }
 
+        public void ResetButton()
+        {
+            switch (LibByPhongGio.Permission)
+            {
+                case 1: // admin
+                    btnAdd.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnEdit.Enabled = true;
+                    break;
+                case 0: // Nhan Vien
+                case 2: // user
+                default:
+                    btnAdd.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnEdit.Enabled = false;
+                    break;
+            }
+        }
         public void ShowData(string QueryCheck)
         {
             dgvDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

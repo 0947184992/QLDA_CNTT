@@ -26,6 +26,25 @@ namespace Quan_Ly_Du_An_Nhom1
             InitializeComponent();
             ShowDataKH(QueryKH);
             ShowData(QueryAll);
+            ResetButton();
+        }
+        public void ResetButton()
+        {
+            switch (LibByPhongGio.Permission)
+            {
+                case 1: // admin
+                    btnAdd.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnEdit.Enabled = true;
+                    break;
+                case 0: // Nhan Vien
+                case 2: // user
+                default:
+                    btnAdd.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnEdit.Enabled = false;
+                    break;
+            }
         }
         public void ShowDataKH(string QueryCheck)
         {
@@ -115,10 +134,38 @@ namespace Quan_Ly_Du_An_Nhom1
             DateTime TGDuKien = dateDuKien.Value;
             DateTime TGThucTe = dateThucTe.Value;
 
+            float KPDuKien ;
+            float KPBanGiao ;
+            float KPThucTe;
+            string KinhPhi1 = txtDuKien.Text.Trim();
+            string KinhPhi2 = txtBanGiao.Text.Trim();
+            string KinhPhi3 = txtThucTe.Text.Trim();
 
-            float KPDuKien = float.Parse(txtDuKien.Text.Trim());
-            float KPBanGiao = float.Parse(txtBanGiao.Text.Trim());
-            float KPThucTe = float.Parse(txtThucTe.Text.Trim());
+            if (float.TryParse(KinhPhi1, out KPDuKien))
+            {
+                KPDuKien = float.Parse(KinhPhi1);
+            }
+            else
+            {
+                KPDuKien = 0;
+            }
+            if (float.TryParse(KinhPhi2, out KPBanGiao))
+            {
+                KPBanGiao = float.Parse(KinhPhi2);
+            }
+            else
+            {
+                KPBanGiao = 0;
+            }
+            if (float.TryParse(KinhPhi3, out KPThucTe))
+            {
+                KPThucTe = float.Parse(KinhPhi3);
+            }
+            else
+            {
+                KPThucTe = 0;
+            }
+
 
             string TrangThaiThanhToan = cbbTrangThai.Text.Trim();
             string TongTienDo = txtTongTienDo.Text.Trim();
@@ -167,13 +214,58 @@ namespace Quan_Ly_Du_An_Nhom1
             DateTime TGDuKien = dateDuKien.Value;
             DateTime TGThucTe = dateThucTe.Value;
 
+            string k1 = txtDuKien.Text.Trim();
+            string k2 = txtBanGiao.Text.Trim();
+            string k3 = txtThucTe.Text.Trim();
+            float KPDuKien ;
+            float KPBanGiao;
+            float KPThucTe ;
+            if (float.TryParse(k1, out KPDuKien))
+            {
+                KPDuKien = float.Parse(k1);
+            }
+            else
+            {
+                KPDuKien = 0;
+            }
 
-            float KPDuKien = float.Parse(txtDuKien.Text.Trim());
-            float KPBanGiao = float.Parse(txtBanGiao.Text.Trim());
-            float KPThucTe = float.Parse(txtThucTe.Text.Trim());
+            if (float.TryParse(k2, out KPBanGiao))
+            {
+                KPBanGiao = float.Parse(k2);
+            }
+            else
+            {
+                KPBanGiao = 0;
+            }
+
+            if (float.TryParse(k3, out KPThucTe))
+            {
+                KPThucTe = float.Parse(k3);
+            }
+            else
+            {
+                KPThucTe = 0;
+            }
 
             string TrangThaiThanhToan = cbbTrangThai.Text.Trim();
-            float TongTienDo = float.Parse(txtTongTienDo.Text.Trim());
+
+            string TienDoString = txtTongTienDo.Text.Trim();
+
+            float TongTienDo;
+
+
+            if (float.TryParse(TienDoString, out TongTienDo))
+            {
+                TongTienDo = float.Parse(TienDoString);
+            }
+            else
+            {
+                TongTienDo = 0;
+            }
+
+
+
+
 
             string QueryEdit = "UPDATE DUAN " +
                 "SET TenDA = N'" + TenDA + "', LoaiDuAn = N'" + LoaiDuAn + "', " +
@@ -201,7 +293,7 @@ namespace Quan_Ly_Du_An_Nhom1
             ShowData(Query);
         }
 
-        private void txtDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             string MaDA = txtMaDA.Text.Trim();
             string QueryDelete = "";

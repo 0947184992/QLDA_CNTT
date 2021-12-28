@@ -74,7 +74,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.txtDuKien = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.txtDelete = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -480,16 +480,16 @@ namespace Quan_Ly_Du_An_Nhom1
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // txtDelete
+            // btnDelete
             // 
-            this.txtDelete.Location = new System.Drawing.Point(215, 33);
-            this.txtDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(70, 25);
-            this.txtDelete.TabIndex = 14;
-            this.txtDelete.Text = "Xóa";
-            this.txtDelete.UseVisualStyleBackColor = true;
-            this.txtDelete.Click += new System.EventHandler(this.txtDelete_Click);
+            this.btnDelete.Location = new System.Drawing.Point(215, 33);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(70, 25);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
@@ -525,7 +525,7 @@ namespace Quan_Ly_Du_An_Nhom1
             this.grbChucNang.Controls.Add(this.label22);
             this.grbChucNang.Controls.Add(this.txtSearch);
             this.grbChucNang.Controls.Add(this.btnSearch);
-            this.grbChucNang.Controls.Add(this.txtDelete);
+            this.grbChucNang.Controls.Add(this.btnDelete);
             this.grbChucNang.Controls.Add(this.btnEdit);
             this.grbChucNang.Controls.Add(this.btnAdd);
             this.grbChucNang.Location = new System.Drawing.Point(549, 36);
@@ -700,7 +700,7 @@ namespace Quan_Ly_Du_An_Nhom1
         private System.Windows.Forms.TextBox txtDuKien;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button txtDelete;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label22;
